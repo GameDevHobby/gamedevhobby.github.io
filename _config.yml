@@ -16,20 +16,18 @@
 title: Game Dev Hobby
 email: chris@polymorphed.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
+  A professional software engineer dabbling in game development.
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://gamedevhobby.com" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: gamedevhobby
-github_username:  gamedevhobby
+twitter_username: GameDevHobby
+github_username:  GameDevHobby
 
 # Build settings
 markdown: kramdown
 theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
-repository: gamedevhobby/gamedevhobby.github.io
+repository: GameDevHobby/gamedevhobby.github.io
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

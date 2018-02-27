@@ -6,17 +6,18 @@
         {
             "label": "serve",
             "type": "shell",
-            "command": "bundle exec jekyll serve --watch"            
+            "command": "bundle exec jekyll serve --watch",
+            "problemMatcher": []
         },
         {
             "label": "build",
             "type": "shell",
-            "command": "bundle exec jekyll build"            
+            "command": "bundle exec jekyll build"
         },
         {
             "label": "install",
             "type": "shell",
-            "command": "bundle install"            
+            "command": "bundle install"
         }
     ]
 }
