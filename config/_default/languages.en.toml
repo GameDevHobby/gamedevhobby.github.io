@@ -19,4 +19,4 @@ itch-io = "https://gamedevhobby.itch.io/"
 ["params.author"]
 name = "Chris Gheen"
 image = "AvatarBig.png"
-headline = "A solo developer building sci-fi roguelikes, weird experiments, and everything in between. I use Unity, Godot, and too many coffee breaks. This blog documents my development process, design challenges, and the occasional game dev success story."
+headline = "A solo developer building a sci-fi roguelike, weird experiments, gamejam games, and everything in between. I use Unity, Godot, and too many coffee breaks. This blog documents my development process, design challenges, and the occasional game dev success story."
