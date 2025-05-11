@@ -1,17 +1,17 @@
 [[main]]
 none = "none"
 
-# [[main]]
-# name = "Devlog"
-# pageRef = "posts"
-# identifier = "0hjlszb7ew"
-# weight = 9_999
+[[main]]
+name = "Devlog"
+pageRef = "posts"
+identifier = "0hjlszb7ew"
+weight = 9_999
 
-# [[main]]
-# name = "Projects"
-# pageRef = "projects"
-# identifier = "xjRVfDGMRz"
-# weight = 9_999
+[[main]]
+name = "Projects"
+pageRef = "projects"
+identifier = "xjRVfDGMRz"
+weight = 9_999
 
 [[footer]]
 none = "none"
