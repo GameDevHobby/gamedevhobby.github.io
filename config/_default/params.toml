@@ -28,14 +28,14 @@ showAppearanceSwitcher = false
 showScrollToTop = true
 
 [homepage]
-layout = "profile"
-showRecent = true
+layout = "custom"
+showRecent = false
 showRecentItems = "5"
 showMoreLink = false
 showMoreLinkDest = "/posts/"
 cardView = false
 cardViewScreenWidth = false
-layoutBackgroundBlur = true
+layoutBackgroundBlur = false
 homepageImage = "logo-banner.png"
 
 [article]
