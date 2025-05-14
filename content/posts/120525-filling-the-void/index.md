@@ -2,7 +2,7 @@
 title: "Filling the Void"
 date: 2025-05-13
 draft: false
-summary: "Rooms in Clone Station were just bland rectangles — big, empty spaces with the occasional random box plopped in. It worked... but it wasn’t fun."
+summary: "Rooms in Clone Station were just bland rectangles — big, empty spaces with the occasional random box plopped in. It worked... but it wasn’t very fun."
 description: "I set out to give the rooms in Clone Station more personality and gameplay flavor."
 tags: ["Clone Station"]
 ---
@@ -16,7 +16,7 @@ tags: ["Clone Station"]
 
 **What’s Happening Behind the Scenes**
 
-Early on, rooms in Clone Station were just bland rectangles — big, empty spaces with the occasional random box plopped in. It worked... but it wasn’t fun. So I set out to give these rooms more personality and gameplay flavor.
+Early on, rooms in Clone Station were just bland rectangles — big, empty spaces with the occasional random box plopped in. It worked... but it wasn’t very fun. So I set out to give these rooms more personality and gameplay flavor.
 
 {{< youtubeLite id="BL15pQtIJak" >}}
 
