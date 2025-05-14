@@ -15,3 +15,9 @@ weight = 9_999
 
 [[footer]]
 none = "none"
+
+[[footer]]
+name = "Topics"
+pageRef = "topics"
+identifier = "2ntessdAmC"
+weight = 9_999
