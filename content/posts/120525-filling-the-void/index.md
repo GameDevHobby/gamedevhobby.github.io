@@ -1,14 +1,11 @@
 ---
 title: "Filling the Void"
-date: 2025-05-12
+date: 2025-05-13
 draft: false
-
-
-description: "a description"
-summary: "a summary"
+summary: "Early on, rooms in Clone Station were just bland rectangles—big, empty spaces with the occasional random box plopped in. It worked... but it wasn’t fun. So I set out to give these rooms more personality and gameplay flavor."
 tags: ["Clone Station"]
 ---
-### This Week in CloneStation – Filling the Void
+### Recently in Clone Station - Filling the Void
 
 **What’s New**
 - Added new room shapes: **Circles**, **Donuts**, and **Expanded Hallways**
@@ -18,7 +15,8 @@ tags: ["Clone Station"]
 
 **What’s Happening Behind the Scenes**
 
-Early on, rooms in CloneStation were just bland rectangles—big, empty spaces with the occasional random box plopped in. It worked... but it wasn’t fun. So I set out to give these rooms more personality and gameplay flavor.
+Early on, rooms in Clone Station were just bland rectangles—big, empty spaces with the occasional random box plopped in. It worked... but it wasn’t fun. So I set out to give these rooms more personality and gameplay flavor.
+
 {{< youtubeLite id="BL15pQtIJak" >}}
 
 To make spaces more visually and structurally interesting, I started by experimenting with new room shapes: **circular arenas**, **donut-shaped chambers**, and **wider hallways** to break up the rhythm. These instantly made the layout feel less predictable.
@@ -44,6 +42,10 @@ Each prop had rules: whether it needed to be near a wall, and how much space it 
 
 Honestly? This was a tough one. Since the whole dungeon is procedural, I couldn't just hand-place things. Everything had to be algorithmically smart. But the payoff is a dungeon that feels way more alive.
 
-Here’s a sneak peek:
+Here’s a few sneak peeks:
 ![Room with Props](furniture.png)
+![Dungeon with Props](dungeon.png)
+![Dungeon with Props](featured.png)
 
+
+Read more about Clone Station [here](/projects/clone-station).
