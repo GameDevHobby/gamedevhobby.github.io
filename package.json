@@ -1,0 +1,6 @@
+{
+    "scripts": {
+        "start": "hugo server --buildDrafts -p 1313",
+        "config": "npx blowfish-tools"
+    }
+}

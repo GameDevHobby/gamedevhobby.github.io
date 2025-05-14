@@ -10,13 +10,15 @@ isoCode = "en"
 rtl = false
 dateFormat = "2 January 2006"
 logo = "logo-icon.png"
-description = "Welcome to GameDevHobby! I'm an indie developer focused on building engaging, atmospheric games - mostly in Unity and occasionally in Godot. I started game dev as a hobby, but over time it turned into a passion project that refuses to let go. This site is a devlog for my projects, a place to share my process, and an evolving portfolio of everything I've built (or broken)."
+description = "Welcome to GameDevHobby! I'm an indie developer focused on building engaging, atmospheric games - mostly in Unity and occasionally in Godot. I started gamedev as a hobby, but over time it turned into a passion project that refuses to let go. This site is a devlog for my projects, a place to share my process, and an evolving portfolio of everything I've built (or broken)."
 
 [[params.author.links]]
 github = "https://github.com/GameDevHobby/"
 itch-io = "https://gamedevhobby.itch.io/"
+youtube = "https://www.youtube.com/@GameDevHobby"
+bluesky = "https://bsky.app/profile/gamedevhobby.bsky.social"
 
 ["params.author"]
 name = "Chris Gheen"
 image = "AvatarBig.png"
-headline = "A solo developer building a sci-fi roguelike, weird experiments, gamejam games, and everything in between. I use Unity, Godot, and too many coffee breaks. This blog documents my development process, design challenges, and the occasional game dev success story."
+headline = "A professional web developer pretending to be a solo game developer building a sci-fi roguelike, weird experiments, game jam games, and everything in between. I mostly use Unity and Godot. This blog documents my development process, design challenges, and the occasional gamedev success story."
