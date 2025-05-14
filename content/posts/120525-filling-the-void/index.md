@@ -2,7 +2,8 @@
 title: "Filling the Void"
 date: 2025-05-13
 draft: false
-summary: "Early on, rooms in Clone Station were just bland rectangles—big, empty spaces with the occasional random box plopped in. It worked... but it wasn’t fun. So I set out to give these rooms more personality and gameplay flavor."
+summary: "Rooms in Clone Station were just bland rectangles — big, empty spaces with the occasional random box plopped in. It worked... but it wasn’t fun."
+description: "I set out to give the rooms in Clone Station more personality and gameplay flavor."
 tags: ["Clone Station"]
 ---
 ### Recently in Clone Station - Filling the Void
@@ -15,7 +16,7 @@ tags: ["Clone Station"]
 
 **What’s Happening Behind the Scenes**
 
-Early on, rooms in Clone Station were just bland rectangles—big, empty spaces with the occasional random box plopped in. It worked... but it wasn’t fun. So I set out to give these rooms more personality and gameplay flavor.
+Early on, rooms in Clone Station were just bland rectangles — big, empty spaces with the occasional random box plopped in. It worked... but it wasn’t fun. So I set out to give these rooms more personality and gameplay flavor.
 
 {{< youtubeLite id="BL15pQtIJak" >}}
 
@@ -42,10 +43,14 @@ Each prop had rules: whether it needed to be near a wall, and how much space it 
 
 Honestly? This was a tough one. Since the whole dungeon is procedural, I couldn't just hand-place things. Everything had to be algorithmically smart. But the payoff is a dungeon that feels way more alive.
 
+**What’s Next**
+- Enemies with new weapons!
+- Finishing and polishing World 1.
+- Open beta?!
+
 Here’s a few sneak peeks:
 ![Room with Props](furniture.png)
 ![Dungeon with Props](dungeon.png)
 ![Dungeon with Props](featured.png)
-
 
 Read more about Clone Station [here](/projects/clone-station).
