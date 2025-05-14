@@ -2,7 +2,8 @@
 title: "draft-devlog"
 date: 2025-05-11
 draft: true
-description: "a description"
+description: "this description shows up when the blog is linked from social media"
+summary: "this summary shows up on the list pages"
 tags: ["Clone Station"]
 ---
 ### This Week in Clone Station
@@ -17,4 +18,4 @@ tags: ["Clone Station"]
 Here’s a sneak peek:
 [GIF or screenshot]
 
-Follow progress here: [link]
+Read more about Clone Station [here](/projects/clone-station).
