@@ -18,7 +18,7 @@ itch-io = "https://gamedevhobby.itch.io/"
 youtube = "https://www.youtube.com/@GameDevHobby"
 bluesky = "https://bsky.app/profile/gamedevhobby.bsky.social"
 
-[params.author]
+["params.author"]
 name = "Chris Gheen"
 image = "AvatarBig.png"
 headline = "A professional web developer pretending to be a solo game developer building a sci-fi roguelike, weird experiments, game jam games, and everything in between. I mostly use Unity and Godot. This blog documents my development process, design challenges, and the occasional gamedev success story."
