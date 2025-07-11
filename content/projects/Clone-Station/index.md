@@ -47,7 +47,7 @@ _Explore the gritty neon-lit corridors, brutal combat zones, and creepy labs of 
 <!-- ## Trailer / Gameplay Video
 
 [![Watch the Trailer](path/to/video-thumbnail.png)](https://www.youtube.com/watch?v=your_video_link)
-*CloneStation Alpha Gameplay Preview*
+*Clone Station Alpha Gameplay Preview*
 
 --- -->
 
@@ -63,7 +63,7 @@ _Explore the gritty neon-lit corridors, brutal combat zones, and creepy labs of 
 
 **Current Version:** Alpha  
 **Next Milestone:** World One Completion + Open Beta  
-**Platforms:** Android (Google Play) 
+**Platforms:** Android (Google Play)  
 **Engine:** Unity
 
 ---
