@@ -7,6 +7,7 @@ buildDrafts = false
 buildFuture = false
 enableEmoji = true
 googleAnalytics = "G-W5GDJWS1JT"
+timeout = "120s"
 
 [pagination]
 pagerSize = 100
