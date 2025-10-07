@@ -1,12 +1,14 @@
 ---
-title: "privacy-policy"
+title: "PRIVACY POLICY"
 date: 2025-10-07
+draft: false
+summary: "A retro-inspired top-down shooter set aboard a a series of procedurally-generated space stations full of danger and secrets."
+description: "A retro-inspired top-down shooter set aboard a a series of procedurally-generated space stations full of danger and secrets."
+topics: []
+showHero: false
+showAuthor: false
+showDate: false
 ---
-
-
-# PRIVACY POLICY
-
-**Last updated October 7, 2025**
 
      
 
