@@ -13,6 +13,8 @@ pageRef = "projects"
 identifier = "xjRVfDGMRz"
 weight = 9_999
 
+[[main]]
+
 [[footer]]
 none = "none"
 
@@ -20,4 +22,10 @@ none = "none"
 name = "Topics"
 pageRef = "topics"
 identifier = "2ntessdAmC"
-weight = 9_999
+weight = 1
+
+[[footer]]
+name = "Privacy Policy"
+pageRef = "pages/privacy-policy"
+identifier = "2bU7tnEOR3"
+weight = 15
