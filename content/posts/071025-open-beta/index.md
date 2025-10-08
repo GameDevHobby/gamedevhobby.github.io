@@ -1,6 +1,6 @@
 ---
 title: "Open Beta Release"
-date: 2025-10-06
+date: 2025-10-07
 draft: false
 description: "this description shows up when the blog is linked from social media"
 summary: "this summary shows up on the list pages"
