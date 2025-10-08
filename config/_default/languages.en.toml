@@ -17,6 +17,7 @@ github = "https://github.com/GameDevHobby/"
 itch-io = "https://gamedevhobby.itch.io/"
 youtube = "https://www.youtube.com/@GameDevHobby"
 bluesky = "https://bsky.app/profile/gamedevhobby.bsky.social"
+email = "mailto:christopher.gheen+gamedevhobby@gmail.com"
 
 ["params.author"]
 name = "Chris Gheen"
