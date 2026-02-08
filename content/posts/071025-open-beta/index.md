@@ -2,8 +2,8 @@
 title: "Open Beta Release"
 date: 2025-10-07
 draft: false
-description: "this description shows up when the blog is linked from social media"
-summary: "this summary shows up on the list pages"
+description: "Clone Station open beta is live on Google Play with World 1 complete, improved controls, and a call for player feedback."
+summary: "Clone Station's open beta is now on Google Play, featuring a full World 1 build and active feedback collection for the next polish pass."
 topics: ["Clone Station"]
 ---
 # Clone Station Open Beta Now Live on Google Play
