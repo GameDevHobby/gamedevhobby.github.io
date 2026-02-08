@@ -1,0 +1,80 @@
+{{ define "main" }}
+  {{ .Scratch.Set "scope" "list" }}
+
+  {{ if site.Params.list.showHero | default false }}
+    {{ $heroStyle := print "hero/" site.Params.list.heroStyle ".html" }}
+    {{ if templates.Exists (printf "partials/%s" $heroStyle) }}
+      {{ partial $heroStyle . }}
+    {{ else }}
+      {{ partial "hero/basic.html" . }}
+    {{ end }}
+  {{ end }}
+
+  <header>
+    {{ if .Params.showBreadcrumbs | default (site.Params.list.showBreadcrumbs | default false) }}
+      {{ partial "breadcrumbs.html" . }}
+    {{ end }}
+    <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+    <div class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+      {{ partial "article-meta/list.html" (dict "context" . "scope" "single") }}
+    </div>
+  </header>
+
+  <section class="mt-0 prose flex max-w-full flex-col dark:prose-invert">
+    <div class="min-w-0 min-h-0 max-w-prose">
+      {{ .Content }}
+    </div>
+  </section>
+
+  {{ $allPages := .Pages.ByDate.Reverse }}
+  {{ $standardPages := slice }}
+  {{ $gameJamPages := slice }}
+
+  {{ range $allPages }}
+    {{ if in (default (slice) .Params.topics) "gamejam" }}
+      {{ $gameJamPages = $gameJamPages | append . }}
+    {{ else }}
+      {{ $standardPages = $standardPages | append . }}
+    {{ end }}
+  {{ end }}
+
+  {{ $cardView := .Params.cardView | default (site.Params.list.cardView | default false) }}
+  {{ $sortedGameJamPages := sort $gameJamPages ".Params.jamCompletedDate" "desc" }}
+
+  {{ if gt (len $standardPages) 0 }}
+    {{ if $cardView }}
+      <section class="mt-10 w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+        {{ range $standardPages }}
+          {{ partial "article-link/card.html" . }}
+        {{ end }}
+      </section>
+    {{ else }}
+      <section class="mt-10 space-y-10 w-full">
+        {{ range $standardPages }}
+          {{ partial "article-link/simple.html" . }}
+        {{ end }}
+      </section>
+    {{ end }}
+  {{ end }}
+
+  <h2 class="mt-12 mb-3 text-2xl font-bold text-neutral-700 dark:text-neutral-300">Game Jam Projects</h2>
+  {{ if gt (len $sortedGameJamPages) 0 }}
+    {{ if $cardView }}
+      <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+        {{ range $sortedGameJamPages }}
+          {{ partial "article-link/card.html" . }}
+        {{ end }}
+      </section>
+    {{ else }}
+      <section class="space-y-10 w-full">
+        {{ range $sortedGameJamPages }}
+          {{ partial "article-link/simple.html" . }}
+        {{ end }}
+      </section>
+    {{ end }}
+  {{ else }}
+    <section class="mt-6 prose dark:prose-invert">
+      <p><em>No game jam projects yet.</em></p>
+    </section>
+  {{ end }}
+{{ end }}

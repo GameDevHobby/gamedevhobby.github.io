@@ -1,0 +1,15 @@
+{{ $recentArticles := .Site.Params.homepage.showRecentItems }}
+{{ $mainPages := where .Site.RegularPages "Section" "posts" }}
+{{ $nonGameJamPages := slice }}
+
+{{ range $mainPages }}
+  {{ if not (in (default (slice) .Params.topics) "gamejam") }}
+    {{ $nonGameJamPages = $nonGameJamPages | append . }}
+  {{ end }}
+{{ end }}
+
+<section class="space-y-10 w-full">
+  {{ range first $recentArticles $nonGameJamPages }}
+    {{ partial "article-link/simple.html" . }}
+  {{ end }}
+</section>
