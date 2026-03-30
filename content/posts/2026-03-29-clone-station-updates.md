@@ -1,7 +1,7 @@
 ---
 title: "Clone Station: Enhancing Interactivity and Editor Workflow (January 2026 Updates)"
 date: 2026-01-24
-draft: false
+draft: true
 description: "This month's focus for Clone Station was on refining player interaction with a new input system, improving the development workflow with editor enhancements, and revamping the owned upgrades UI."
 summary: "Devlog covering the move to Unity's new Input System, editor scene labeling, and the implementation of a dynamic, stacked UI for owned upgrades in Clone Station."
 topics: ["Clone Station", "Game Development", "Unity"]
