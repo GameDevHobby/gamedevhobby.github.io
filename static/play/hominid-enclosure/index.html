@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Hominid Enclosure</title>
+<meta name="description" content="Keep a terrarium of humans alive and happy. An alien zookeeping sim by GameDevHobby.">
+<link rel="icon" href="/favicon-32x32.png">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.min.js" } }
+</script>
+</head>
+<body>
+<canvas id="scene"></canvas>
+
+<!-- Top bar -->
+<div id="topbar" class="hud">
+  <div class="brand">👽 <b>HOMINID ENCLOSURE</b></div>
+  <div class="clock">
+    <span id="clock-day">Day 1</span>
+    <span id="clock-time">07:00</span>
+    <span id="clock-phase">☀️</span>
+    <div class="speed">
+      <button data-speed="0" title="Pause (Space)">⏸</button>
+      <button data-speed="1" class="on" title="Normal speed (,)">▶</button>
+      <button data-speed="3" title="Fast (.)">▶▶</button>
+      <button data-speed="6" title="Ultra (/)">▶▶▶</button>
+    </div>
+  </div>
+  <div class="stats">
+    <span title="Research Points: earned from happy, observed specimens">🔬 <b id="stat-rp">0</b> RP</span>
+    <span title="Specimens in the enclosure">🧍 <b id="stat-pop">0</b></span>
+    <span title="Average mood">🙂 <b id="stat-mood">0</b>%</span>
+    <span title="Messes on the floor">💩 <b id="stat-mess">0</b></span>
+    <span class="temp" title="Enclosure temperature / thermostat">🌡️ <b id="stat-temp">21</b>°
+      <input id="thermo" type="range" min="10" max="32" value="21" step="1" title="Thermostat">
+      <small id="thermo-val">21°</small>
+    </span>
+    <span class="eng" title="Alien engagement: interact with your specimens to keep it up. Boosts research.">📡 <span class="meter"><i id="stat-eng"></i></span></span>
+  </div>
+</div>
+<div id="event-banner" class="hud hidden"></div>
+
+<!-- Tools -->
+<div id="toolbar" class="hud">
+  <button class="tool on" data-tool="inspect"><span>🖐️</span><em>Inspect</em><kbd>1</kbd></button>
+  <button class="tool" data-tool="food"><span>🍖</span><em>Drop Food</em><kbd>2</kbd></button>
+  <button class="tool" data-tool="toy"><span>⚽</span><em>Toy</em><kbd>3</kbd></button>
+  <button class="tool" data-tool="spray"><span>💦</span><em>Spray Tank</em><kbd>4</kbd></button>
+  <button class="tool" data-tool="medi"><span>💉</span><em>Medi-Ray</em><kbd>5</kbd></button>
+  <hr>
+  <button id="btn-lab" class="tool"><span>🧪</span><em>Research Lab</em><kbd>T</kbd></button>
+  <button id="btn-debug" class="tool small"><span>📊</span><em>Overlay</em><kbd>G</kbd></button>
+  <button id="btn-mute" class="tool small"><span>🔊</span><em>Sound</em><kbd>M</kbd></button>
+  <button id="btn-help" class="tool small"><span>❔</span><em>Help</em><kbd>H</kbd></button>
+  <div id="tool-hint"></div>
+</div>
+
+<!-- Inspector -->
+<div id="inspector" class="hud hidden">
+  <div class="ins-head">
+    <div>
+      <div id="ins-name" class="ins-name">Name</div>
+      <div id="ins-sub" class="ins-sub">Specimen #1</div>
+    </div>
+    <button id="ins-close" title="Deselect (Esc)">✕</button>
+  </div>
+  <div id="ins-traits" class="chips"></div>
+  <div class="ins-row"><span>Doing</span><b id="ins-action">—</b></div>
+  <div class="bar big"><label>Mood <span id="ins-mood-label"></span></label><div><i id="ins-mood"></i></div></div>
+  <div class="bar big"><label>Health <span id="ins-health-label"></span></label><div><i id="ins-health" class="health"></i></div></div>
+  <div id="ins-needs"></div>
+  <div class="ins-section">Moodlets</div>
+  <div id="ins-moodlets" class="small-list"></div>
+  <div class="ins-section">Relationships</div>
+  <div id="ins-rels" class="small-list"></div>
+  <div class="ins-buttons">
+    <button id="ins-follow">🎥 Follow (F)</button>
+  </div>
+</div>
+
+<div id="log" class="hud"></div>
+<div id="objectives" class="hud">
+  <div class="obj-title">📋 Research Objectives</div>
+  <ul id="obj-list"></ul>
+</div>
+<div id="toast" class="hud hidden"></div>
+<div id="tooltip" class="hidden"></div>
+
+<!-- Research lab -->
+<div id="lab" class="modal hidden">
+  <div class="panel">
+    <div class="panel-head">
+      <h2>🧪 Research Lab</h2>
+      <div>🔬 <b id="lab-rp">0</b> RP <small>(lifetime <span id="lab-life">0</span>)</small></div>
+      <button class="close" data-close="lab">✕</button>
+    </div>
+    <div id="lab-items" class="lab-grid"></div>
+    <h3>📡 Engagement Report</h3>
+    <div id="lab-report" class="report"></div>
+  </div>
+</div>
+
+<!-- Intro / help -->
+<div id="intro" class="modal">
+  <div class="panel intro">
+    <h1>👽 Hominid Enclosure</h1>
+    <p class="lede">Congratulations, Keeper. The Galactic Zoological Society has entrusted you with a terrarium of
+      <i>Homo sapiens</i>. They wander. They nap. They make messes. <b>Keep them fed, clean and happy</b>
+      &mdash; happy specimens generate research.</p>
+    <div class="cols">
+      <div>
+        <h3>Your tools</h3>
+        <ul>
+          <li><kbd>1</kbd> 🖐️ <b>Inspect</b> a human. Click a food dispenser to <b>refill</b> it.</li>
+          <li><kbd>2</kbd> 🍖 <b>Drop Food</b> pellets anywhere (1 RP).</li>
+          <li><kbd>3</kbd> ⚽ <b>Toy</b>: place an enrichment ball (8 RP).</li>
+          <li><kbd>4</kbd> 💦 <b>Spray Tank</b>: clean messes, or hose down a smelly human (they hate it).</li>
+          <li><kbd>5</kbd> 💉 <b>Medi-Ray</b>: cure a sick human (4 RP).</li>
+          <li><kbd>T</kbd> 🧪 <b>Research Lab</b>: buy beds, toilets, drones and upgrades.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Camera</h3>
+        <ul>
+          <li><b>Left-drag</b> orbit &middot; <b>right-drag</b> pan &middot; <b>wheel</b> zoom</li>
+          <li><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> pan &middot; <kbd>Q</kbd><kbd>E</kbd> rotate</li>
+          <li><kbd>F</kbd> follow the selected human</li>
+          <li><kbd>Space</kbd> pause &middot; <kbd>,</kbd> <kbd>.</kbd> <kbd>/</kbd> speed</li>
+          <li><kbd>G</kbd> needs overlay &middot; <kbd>M</kbd> mute &middot; <kbd>Esc</kbd> cancel</li>
+        </ul>
+        <h3>Warning</h3>
+        <p>Starving or sick specimens lose health. At zero they are confiscated by the Galactic Welfare Bureau.</p>
+      </div>
+    </div>
+    <button id="btn-start" class="primary">Begin Observation</button>
+  </div>
+</div>
+
+<div id="gameover" class="modal hidden">
+  <div class="panel intro">
+    <h1>🚨 Enclosure Shut Down</h1>
+    <p id="go-text" class="lede"></p>
+    <button id="btn-restart" class="primary">Request New Specimens</button>
+  </div>
+</div>
+
+<script type="module" src="game.js"></script>
+</body>
+</html>
